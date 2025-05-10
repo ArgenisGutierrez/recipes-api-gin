@@ -26,8 +26,13 @@ GET {{base_url}}/recipes
 ###
 
 @request.title = Update a Recipe
-PUT {{base_url}}/recipes/w
+PUT {{base_url}}/recipes/1
 
 {
   "name":"pizza"
 }
+
+###
+
+@request.title = Delete a Recipe
+DELETE {{base_url}}/recipes/1
