@@ -1,0 +1,88 @@
+[
+  {
+    "name": "French Toast",
+    "tags": [
+      "breakfast",
+      "sweet"
+    ],
+    "ingredients": [
+      "4 slices of bread",
+      "2 large eggs",
+      "1/2 cup milk",
+      "1 tsp vanilla extract",
+      "1 tbsp sugar",
+      "Butter for cooking"
+    ],
+    "instructions": [
+      "Step 1. Whisk eggs, milk, vanilla, and sugar in a bowl.",
+      "Step 2. Soak bread slices in the mixture.",
+      "Step 3. Cook on a buttered pan until golden.",
+      "Step 4. Serve with syrup or powdered sugar."
+    ]
+  },
+  {
+    "name": "Caesar Salad",
+    "tags": [
+      "lunch",
+      "salad"
+    ],
+    "ingredients": [
+      "1 head romaine lettuce",
+      "1/2 cup grated Parmesan",
+      "1 cup croutons",
+      "1/4 cup Caesar dressing",
+      "1 lemon (juiced)",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "Step 1. Chop lettuce and place in a bowl.",
+      "Step 2. Add dressing and lemon juice, then toss.",
+      "Step 3. Mix in Parmesan and croutons.",
+      "Step 4. Season with salt and pepper."
+    ]
+  },
+  {
+    "name": "Chocolate Cake",
+    "tags": [
+      "dessert",
+      "baking"
+    ],
+    "ingredients": [
+      "1 3/4 cups flour",
+      "2 cups sugar",
+      "3/4 cup cocoa powder",
+      "1 1/2 tsp baking soda",
+      "1 cup milk",
+      "1/2 cup vegetable oil",
+      "2 eggs",
+      "1 cup boiling water"
+    ],
+    "instructions": [
+      "Step 1. Preheat oven to 350°F and prepare pans.",
+      "Step 2. Mix dry ingredients in a bowl.",
+      "Step 3. Add milk, oil, and eggs. Mix well.",
+      "Step 4. Stir in boiling water and bake for 30 mins."
+    ]
+  },
+  {
+    "name": "Veggie Stir-Fry",
+    "tags": [
+      "dinner",
+      "vegetarian"
+    ],
+    "ingredients": [
+      "2 cups broccoli florets",
+      "1 red bell pepper (sliced)",
+      "1 carrot (julienned)",
+      "1 tbsp soy sauce",
+      "1 tbsp sesame oil",
+      "2 garlic cloves (minced)"
+    ],
+    "instructions": [
+      "Step 1. Heat sesame oil in a wok.",
+      "Step 2. Sauté garlic for 1 minute.",
+      "Step 3. Add vegetables and stir-fry for 5 mins.",
+      "Step 4. Mix in soy sauce and serve."
+    ]
+  }
+]
