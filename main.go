@@ -1,6 +1,9 @@
+// Package main API para gestionar recetas
 package main
 
 import (
+	"encoding/json"
+	"io/ioutil"
 	"net/http"
 	"time"
 
@@ -8,6 +11,7 @@ import (
 	"github.com/rs/xid"
 )
 
+// Recipe Estrutura de una receta
 type Recipe struct {
 	ID           string    `json:"id"`
 	Name         string    `json:"name"`
@@ -21,8 +25,11 @@ var recipes []Recipe
 
 func init() {
 	recipes = make([]Recipe, 0)
+	file, _ := ioutil.ReadFile("recipes.json")
+	_ = json.Unmarshal([]byte(file), &recipes)
 }
 
+// NewRecipeHandler crear una receta
 func NewRecipeHandler(ctx *gin.Context) {
 	var recipe Recipe
 	if err := ctx.ShouldBindJSON(&recipe); err != nil {
@@ -36,8 +43,15 @@ func NewRecipeHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, recipe)
 }
 
+// ListRecipesHandler Listar recetas
+func ListRecipesHandler(ctx *gin.Context) {
+	ctx.JSON(http.StatusOK, recipes)
+}
+
+// main Ejecutar el servidor
 func main() {
 	router := gin.Default()
 	router.POST("/recipes", NewRecipeHandler)
+	router.GET("/recipes", ListRecipesHandler)
 	router.Run()
 }
