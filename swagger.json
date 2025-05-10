@@ -1,0 +1,153 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample recipes API. You can find out more about the API at https://github.com/ArgenisGutierrez/recipes-api-gin",
+    "title": "Recipes API",
+    "contact": {
+      "name": "Argenis Gutierrez",
+      "url": "https://github.com/ArgenisGutierrez",
+      "email": "argenis.v.gtz@gmail.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "version": "1.0.0"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "paths": {
+    "/recipes": {
+      "get": {
+        "description": "Successful operation",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "404": {
+            "description": "Recipe not found"
+          }
+        },
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "listRecipes"
+      },
+      "post": {
+        "description": "Returns a NewRecipeHandler",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "newRecipe"
+      }
+    },
+    "/recipes/search": {
+      "get": {
+        "description": "returns a list of recipes",
+        "tags": [
+          "recipes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "404": {
+            "description": "Recipe not found"
+          }
+        },
+        "operationId": "searchRecipes",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Tag para buscar",
+            "name": "tag",
+            "in": "query",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/recipes/{id}": {
+      "put": {
+        "description": "Returns a updated recipe",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "404": {
+            "description": "Recipe not found"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "updateRecipe",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "ID of the recipe to update",
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ]
+      },
+      "delete": {
+        "description": "returns a deleted recipe",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "404": {
+            "description": "Recipe not found"
+          }
+        },
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "deleteRecipe",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "ID de la receta",
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ]
+      }
+    }
+  }
+}
