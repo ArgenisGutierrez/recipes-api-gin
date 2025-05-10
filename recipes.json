@@ -2,10 +2,7 @@
   {
     "id": "1",
     "name": "French Toast",
-    "tags": [
-      "breakfast",
-      "sweet"
-    ],
+    "tags": ["breakfast", "sweet"],
     "ingredients": [
       "4 slices of bread",
       "2 large eggs",
@@ -23,10 +20,7 @@
   },
   {
     "name": "Caesar Salad",
-    "tags": [
-      "lunch",
-      "salad"
-    ],
+    "tags": ["lunch", "salad", "breakfast"],
     "ingredients": [
       "1 head romaine lettuce",
       "1/2 cup grated Parmesan",
@@ -44,10 +38,7 @@
   },
   {
     "name": "Chocolate Cake",
-    "tags": [
-      "dessert",
-      "baking"
-    ],
+    "tags": ["dessert", "baking"],
     "ingredients": [
       "1 3/4 cups flour",
       "2 cups sugar",
@@ -67,10 +58,7 @@
   },
   {
     "name": "Veggie Stir-Fry",
-    "tags": [
-      "dinner",
-      "vegetarian"
-    ],
+    "tags": ["dinner", "vegetarian"],
     "ingredients": [
       "2 cups broccoli florets",
       "1 red bell pepper (sliced)",

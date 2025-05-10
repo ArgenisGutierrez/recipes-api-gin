@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -99,6 +100,30 @@ func DeleteRecipeHandler(ctx *gin.Context) {
 	})
 }
 
+func SearchRecipesHandler(ctx *gin.Context) {
+	tag := ctx.Query("tag")
+	listOfRecipes := make([]Recipe, 0)
+	for i := 0; i < len(recipes); i++ {
+		found := false
+		for _, t := range recipes[i].Tags {
+			if strings.EqualFold(t, tag) {
+				found = true
+			}
+		}
+		if found {
+			listOfRecipes = append(listOfRecipes, recipes[i])
+		}
+	}
+	if len(listOfRecipes) == 0 {
+		ctx.JSON(http.StatusNotFound, gin.H{
+			"error": "No se encuentra ninguna receta con el tag " + tag,
+		})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, listOfRecipes)
+}
+
 // main Ejecutar el servidor
 func main() {
 	router := gin.Default()
@@ -106,5 +131,6 @@ func main() {
 	router.GET("/recipes", ListRecipesHandler)
 	router.PUT("/recipes/:id", UpdateRecipeHandler)
 	router.DELETE("/recipes/:id", DeleteRecipeHandler)
+	router.GET("/recipes/search", SearchRecipesHandler)
 	router.Run()
 }
