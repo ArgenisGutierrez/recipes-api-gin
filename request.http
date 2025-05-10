@@ -36,3 +36,13 @@ PUT {{base_url}}/recipes/1
 
 @request.title = Delete a Recipe
 DELETE {{base_url}}/recipes/1
+
+###
+
+@request.title = Search for recipes
+GET {{base_url}}/recipes/search?tag=breakfast
+
+###
+
+@request.title = Search for recipes bad
+GET {{base_url}}/recipes/search?tag=fish
