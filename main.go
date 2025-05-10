@@ -48,10 +48,40 @@ func ListRecipesHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, recipes)
 }
 
+func UpdateRecipeHandler(ctx *gin.Context) {
+	id := ctx.Params.ByName("id")
+	var recipe Recipe
+	if err := ctx.ShouldBindJSON(&recipe); err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
+
+	index := -1
+	for i := 0; i < len(recipes); i++ {
+		if recipes[i].ID == id {
+			index = i
+			break
+		}
+	}
+
+	if index == -1 {
+		ctx.JSON(http.StatusNotFound, gin.H{
+			"error": "No se encuentra la receta",
+		})
+		return
+	}
+
+	recipes[index] = recipe
+	ctx.JSON(http.StatusOK, recipe)
+}
+
 // main Ejecutar el servidor
 func main() {
 	router := gin.Default()
 	router.POST("/recipes", NewRecipeHandler)
 	router.GET("/recipes", ListRecipesHandler)
+	router.PUT("/recipes/:id", UpdateRecipeHandler)
 	router.Run()
 }
