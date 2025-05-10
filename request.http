@@ -22,3 +22,12 @@ Content-Type: application/json
 @request.title = Get all recipes
 @request.before_hook = ask_for_confirmation
 GET {{base_url}}/recipes
+
+###
+
+@request.title = Update a Recipe
+PUT {{base_url}}/recipes/w
+
+{
+  "name":"pizza"
+}
