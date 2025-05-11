@@ -3,6 +3,7 @@ POST {{base_url}}/recipes
 Content-Type: application/json
 
 {
+  "id": "681fe87a6a32eff6f5fa2d22",
   "name": "Pancakes",
     "tags": [
     "meal",
@@ -26,16 +27,19 @@ GET {{base_url}}/recipes
 ###
 
 @request.title = Update a Recipe
-PUT {{base_url}}/recipes/1
+PUT {{base_url}}/recipes/681fd8ac714616ae96b1e1d6
 
 {
-  "name":"pizza"
+  "name":"Toast",
+  "tags":["breakfast","sweet"],
+  "ingredients":["2 slices of bread","2 eggs","1/2 cup milk"],
+  "instructions":["Step 1","Step 2","Step 3"]
 }
 
 ###
 
 @request.title = Delete a Recipe
-DELETE {{base_url}}/recipes/1
+DELETE {{base_url}}/recipes/681fe90a6a32eff6f5fa2d23
 
 ###
 
