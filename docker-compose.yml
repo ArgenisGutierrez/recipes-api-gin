@@ -11,6 +11,16 @@ services:
     # Para persistencia de datos
     # volumes:
     #   - mongodb_data:/data/db
-# Si usas el volumen, descomenta esto:
-# volumes:
-#   mongodb_data:
+    # Si usas el volumen, descomenta esto:
+    # volumes:
+    #   mongodb_data:
+  app:
+    build: .
+    container_name: recipes-api
+    environment:
+      MONGO_URI: "mongodb://admin:password@mongodb:27017"
+      MONGO_DATABASE: "demo"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb

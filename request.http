@@ -39,7 +39,7 @@ PUT {{base_url}}/recipes/681fd8ac714616ae96b1e1d6
 ###
 
 @request.title = Delete a Recipe
-DELETE {{base_url}}/recipes/681fe90a6a32eff6f5fa2d23
+DELETE {{base_url}}/recipes/681ff81d355e2a4c1f4da0f1
 
 ###
 
