@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"net/http"
+	"time"
 
 	"github.com/ArgenisGutierrez/recipes-api/models"
 	"github.com/gin-gonic/gin"
@@ -17,8 +18,7 @@ type RecipesHandler struct {
 	ctx        context.Context
 }
 
-func NewRecipesHandler(ctx context.Context, collection *mongo.
-	Collection) *RecipesHandler {
+func NewRecipesHandler(ctx context.Context, collection *mongo.Collection) *RecipesHandler {
 	return &RecipesHandler{
 		collection: collection,
 		ctx:        ctx,
@@ -33,8 +33,7 @@ func NewRecipesHandler(ctx context.Context, collection *mongo.
 // responses:
 // '200':
 // description: Successful operation
-func (handler *RecipesHandler) ListRecipesHandler(c *gin.
-	Context) {
+func (handler *RecipesHandler) ListRecipesHandler(c *gin.Context) {
 	cur, err := handler.collection.Find(handler.ctx, bson.M{})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError,
@@ -58,6 +57,16 @@ func (handler *RecipesHandler) NewRecipeHandler(ctx *gin.Context) {
 			"error": err.Error()})
 		return
 	}
+	recipe.ID = primitive.NewObjectID()
+	recipe.PublishedAt = time.Now()
+	_, err := handler.collection.InsertOne(ctx, recipe)
+	if err != nil {
+		fmt.Println(err)
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Error al insertar nueva receta"})
+		return
+	}
+	ctx.JSON(http.StatusOK, recipe)
+
 }
 
 // swagger:operation PUT /recipes/{id} recipes updateRecipe
