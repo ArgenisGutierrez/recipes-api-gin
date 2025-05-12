@@ -27,7 +27,7 @@ GET {{base_url}}/recipes
 ###
 
 @request.title = Update a Recipe
-PUT {{base_url}}/recipes/681fd8ac714616ae96b1e1d6
+PUT {{base_url}}/recipes/68213dce1b68578d6b200ce4
 
 {
   "name":"Toast",
@@ -39,7 +39,7 @@ PUT {{base_url}}/recipes/681fd8ac714616ae96b1e1d6
 ###
 
 @request.title = Delete a Recipe
-DELETE {{base_url}}/recipes/681ff81d355e2a4c1f4da0f1
+DELETE {{base_url}}/recipes/68213dce1b68578d6b200ce4
 
 ###
 
