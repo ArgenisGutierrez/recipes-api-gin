@@ -36,6 +36,7 @@ services:
     environment:
       MONGO_URI: "mongodb://admin:password@mongodb:27017"
       MONGO_DATABASE: "demo"
+      JWT_SECRET: "BFaY37p85Zjskpmgku7z8A=="
     ports:
       - "8080:8080"
     depends_on:
