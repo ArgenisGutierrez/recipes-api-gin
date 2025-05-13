@@ -62,12 +62,9 @@ func init() {
 
 func main() {
 	router := gin.Default()
-	store, _ := redisStore.NewStore(10, "tcp", "redis:6379", "", "", []byte("secret"))
-	router.Use(sessions.Sessions("recipes_api", store))
-	router.POST("/signout", authHandler.SignOutHandler)
 	router.GET("/recipes", recipesHandler.ListRecipesHandler)
 	router.POST("/signin", authHandler.SignInHandler)
-	router.POST("/refresh", authHandler.Refreshhandler)
+	router.POST("/refresh", authHandler.RefreshHandler)
 	authorized := router.Group("/")
 	authorized.Use(authHandler.AuthMiddleware())
 	{
