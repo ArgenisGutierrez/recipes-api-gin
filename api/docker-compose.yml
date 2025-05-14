@@ -1,0 +1,43 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - "27017:27017"
+    # Para persistencia de datos
+    # volumes:
+    #   - mongodb_data:/data/db
+    # Si usas el volumen, descomenta esto:
+    # volumes:
+    #   mongodb_data:
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./config/redis.conf:/usr/local/etc/redis/redis.conf
+  redis-insight:
+    image: redislabs/redisinsight:latest
+    container_name: redis-insight
+    ports:
+      - "5540:5540"
+    links:
+      - redis
+    depends_on:
+      - redis
+  app:
+    build: .
+    container_name: recipes-api
+    environment:
+      MONGO_URI: "mongodb://admin:password@mongodb:27017"
+      MONGO_DATABASE: "demo"
+      JWT_SECRET: "BFaY37p85Zjskpmgku7z8A=="
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
