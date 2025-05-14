@@ -1,0 +1,77 @@
+@request.title = Create a Recipe
+POST {{base_url}}/recipes
+Content-Type: application/json
+-Cookie: recipes_api=MTc0NzExNTU0M3xOd3dBTkVOSVVVVTNRMUZTV0U1T1RrOVhUak16UWxoVFdrUTJOVlZGUzBWWlNVbEtVMWxCTjFWRVV6UXlSRFJQUlVaSlRVZFFWRUU9fGRyfxZZ13SteZ7yXJQ2mbQESDcD61XgUWXh158osnKy; Path=/; Expires=Thu, 12 Jun 2025 05:52:23 GMT; Max-Age=2592000
+
+{
+  "id": "681fe87a6a32eff6f5fa2d22",
+  "name": "Pancakes",
+    "tags": [
+    "meal",
+    "breakfast"
+    ],
+    "ingredients": [
+      "1 1/2 cups (355 ml) warm water (105°F-115°F)",
+      "1 package (2 1/4 teaspoons) of active dry yeast",
+      "3 3/4 cups (490 g) bread flour",
+      "feta cheese, firm mozzarella cheese, grated"
+    ],
+    "instructions": ["Step 1.", "Step 2.", "Step 3."]
+}
+
+###
+
+@request.title = Get all recipes
+@request.before_hook = ask_for_confirmation
+GET {{base_url}}/recipes
+
+###
+
+@request.title = Update a Recipe
+PUT {{base_url}}/recipes/68229470651dcc711ef141a6
+Cookie: recipes_api=MTc0NzExNDY1NHxOd3dBTkVWQ1FVdEVSVUUyVjB0RlYwVkZURkF6VjBvelRUWlhWME5SVGpWYVVFVlNORFJCVEVGVVRreEtTa2RVUVZkSlJqTkVOMEU9fCLvYiItxTv2SE6iYRN5orb3qCm9bP08-X1nCVQvO0R_; Path=/; Expires=Thu, 12 Jun 2025 05:37:34 GMT; Max-Age=2592000
+
+{
+  "name":"Toast",
+  "tags":["breakfast","sweet"],
+  "ingredients":["2 slices of bread","2 eggs","1/2 cup milk"],
+  "instructions":["Step 1","Step 2","Step 3"]
+}
+
+###
+
+@request.title = Delete a Recipe
+DELETE {{base_url}}/recipes/682292bd651dcc711ef141a5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzQ3MTA5NDMzfQ.8e9CFNi7Q-l2d8xDDtVn8tbzQcOJYbHmYQggiZNtY5E
+
+###
+
+@request.title = Search for recipes
+GET {{base_url}}/recipes/search?tag=breakfast
+
+###
+
+@request.title = Search for recipes bad
+GET {{base_url}}/recipes/search?tag=fish
+
+###
+
+@request.title = Signin
+POST {{base_url}}/signin
+Content-Type: application/json
+
+{
+  "username":"admin",
+  "password":"fCRmh4Q2J7Rseqkz"
+}
+
+###
+
+@request.title = refresh token
+POST {{base_url}}/refresh
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzQ3MTEwMTQ4fQ.TiCKcQ6B4AsSeD1SXiCdjDALasLGXlC937wr4_r1ZBg
+
+###
+
+@request.title = Signout
+POST {{base_url}}/signout

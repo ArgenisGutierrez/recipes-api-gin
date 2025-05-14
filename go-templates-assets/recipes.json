@@ -1,0 +1,155 @@
+[
+  {
+    "id": "603fa0f0b39c47f0e40659c2",
+    "name": "Crock Pot Roast",
+    "ingredients": [
+      {
+        "quantity": "1",
+        "name": "beef roast",
+        "type": "Meat"
+      },
+      {
+        "quantity": "1 package",
+        "name": "brown gravy mix",
+        "type": "Baking"
+      },
+      {
+        "quantity": "1 package",
+        "name": "dried Italian salad dressing mix",
+        "type": "Condiments"
+      },
+      {
+        "quantity": "1 package",
+        "name": "dry ranch dressing mix",
+        "type": "Condiments"
+      },
+      {
+        "quantity": "1/2 cup",
+        "name": "water",
+        "type": "Drinks"
+      }
+    ],
+    "steps": [
+      "Place beef roast in crock pot.",
+      "Mix the dried mixes together in a bowl and sprinkle over the roast.",
+      "Pour the water around the roast.",
+      "Cook on low for 7-9 hours."
+    ],
+    "imageURL": "/assets/images/crock-pot-roast.jpg"
+  },
+  {
+    "id": "60hfa0b0239c47f0e40659c2",
+    "name": "Vegetarian Lasagna",
+    "ingredients": [
+      {
+        "quantity": "12",
+        "name": "lasagna noodles",
+        "type": "Pasta"
+      },
+      {
+        "quantity": "2 cups",
+        "name": "ricotta cheese",
+        "type": "Dairy"
+      },
+      {
+        "quantity": "2 cups",
+        "name": "spinach",
+        "type": "Produce"
+      },
+      {
+        "quantity": "3 cups",
+        "name": "marinara sauce",
+        "type": "Condiments"
+      },
+      {
+        "quantity": "1.5 cups",
+        "name": "shredded mozzarella",
+        "type": "Dairy"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 375°F (190°C).",
+      "Layer noodles, ricotta, spinach, and sauce in baking dish.",
+      "Top with mozzarella and repeat layers.",
+      "Bake covered for 45 minutes, then uncovered for 15 minutes."
+    ],
+    "imageURL": "/assets/images/oatmeal-cookies.jpg"
+  },
+  {
+    "id": "633f80f0b33c47f0e40659c2",
+    "name": "Chicken Tacos",
+    "ingredients": [
+      {
+        "quantity": "2 lbs",
+        "name": "chicken breasts",
+        "type": "Meat"
+      },
+      {
+        "quantity": "1 packet",
+        "name": "taco seasoning",
+        "type": "Condiments"
+      },
+      {
+        "quantity": "1 cup",
+        "name": "salsa",
+        "type": "Condiments"
+      },
+      {
+        "quantity": "12",
+        "name": "taco shells",
+        "type": "Bakery"
+      },
+      {
+        "quantity": "1 cup",
+        "name": "shredded lettuce",
+        "type": "Produce"
+      }
+    ],
+    "steps": [
+      "Place chicken in slow cooker with taco seasoning and salsa.",
+      "Cook on low for 6 hours, then shred chicken.",
+      "Warm taco shells according to package instructions.",
+      "Assemble tacos with chicken and toppings."
+    ],
+    "imageURL": "/assets/images/yorkshire_pudding.jpg"
+  },
+  {
+    "id": "603fa0f0b39c4780e2045922",
+    "name": "Chocolate Chip Cookies",
+    "ingredients": [
+      {
+        "quantity": "2.25 cups",
+        "name": "all-purpose flour",
+        "type": "Baking"
+      },
+      {
+        "quantity": "1 tsp",
+        "name": "baking soda",
+        "type": "Baking"
+      },
+      {
+        "quantity": "1 cup",
+        "name": "butter",
+        "type": "Dairy"
+      },
+      {
+        "quantity": "3/4 cup",
+        "name": "granulated sugar",
+        "type": "Baking"
+      },
+      {
+        "quantity": "2 cups",
+        "name": "chocolate chips",
+        "type": "Baking"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 375°F (190°C).",
+      "Mix dry ingredients in a bowl.",
+      "Cream butter and sugars, then add eggs and vanilla.",
+      "Combine wet and dry ingredients, fold in chocolate chips.",
+      "Bake for 9-11 minutes until golden."
+    ],
+    "imageURL": "/assets/images/tacos.jpg"
+  }
+]
